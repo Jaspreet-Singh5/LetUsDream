@@ -1,0 +1,294 @@
+<% include ./partials/header %>
+        
+    <div id="maincarousel" class="carousel slide" data-ride="carousel">
+	  <ol class="carousel-indicators">
+	    <li data-target="#maincarousel" data-slide-to="0" class="active"></li>
+	    <li data-target="#maincarousel" data-slide-to="1"></li>
+	    <li data-target="#maincarousel" data-slide-to="2"></li>
+	  </ol>
+	  <div class="carousel-inner">
+	    <div class="carousel-item active">
+	      <img class="d-block w-100" src="https://farm9.staticflickr.com/8350/29014692971_47542cda62_k.jpg" alt="First slide">
+	    </div>
+	    <div class="carousel-item">
+	      <img class="d-block w-100" src="https://farm9.staticflickr.com/8270/28470277694_39e82a36a1_k.jpg" alt="Second slide">
+	    </div>
+	    <div class="carousel-item">
+	      <img class="d-block w-100" src="https://farm9.staticflickr.com/8529/29014690221_03b3c44b26_k.jpg" alt="Third slide">
+	    </div>
+	  </div>
+	  <a class="carousel-control-prev" id="mainSlider" href="#maincarousel" role="button" data-slide="prev">
+	    <i class="fas fa-chevron-left"  aria-hidden="true"></i>
+		<span class="sr-only text-black">Previous</span>
+	  </a>
+	  <a class="carousel-control-next" id="mainSlider" href="#maincarousel" role="button" data-slide="next">
+	    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+		<span class="sr-only text-black">Next</span>
+	  </a>
+	</div>
+        
+        <!--================Welcome Area =================-->
+        <section class="welcome_area d-flex mt-lg-5">
+        	<div class="container">
+        		<div class="welcome_inner row">
+        			<div class="d-none d-lg-block col-lg-5">
+        				<div class="welcome_img ">
+        					<img class="img-fluid" src="../img/welcome-1.jpg" alt="">
+        				</div>
+        			</div>
+        			<div class="col-lg-6 offset-lg-1">
+        				<div class="welcome_text">
+        					<h3>Welcome to LetUsDream</h3>
+        					<p class="text-justify">
+        					    The Let Us Dream is an umbrella organization comprised of different groups of people with diverse talents and capacities working together 
+        					    for a common goal of building better tomorrow by sharing their success values and strategies to the younger generation, tomorrow’s future. 
+        					    This platform invites the likeminded people from all diversities of the world to support and guide youngsters in their process of holistic 
+        					    developmental growth. The organization established to provide teenagers various opportunities to identify their unique talents and to develop 
+        					    their potential to the fullest, to achieve a value–guided personality for sustainable success in their personal and social lives.
+        			        </p>
+        					<a class="main_btn" href="/moreDetails">View More Details</a>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </section>
+        <!--================End Welcome Area =================-->
+        
+        <!--================Event Schedule Area =================-->
+        <section class="event_schedule_area p_120">
+        	<div class="container py-4">
+        		<div class="main_title">
+        			<h2>Event Schedule</h2>
+        		</div>
+        		<div class="event_schedule_inner">
+					<div class="tab-content" id="myTabContent">
+						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+							<div class = "row pb-4 events_list" style = "display: flex; flex-wrap: wrap;">
+								<% events.forEach(function(event){ %>
+									
+										<div class="col-md-6 pb-3">
+											<div class="card">
+											  <div class="card-img-top img-fluid" style="background-image: url('<%= event.logo %>')">
+											  </div>
+											  <div class="card-body">
+											  	<h4 class="card-title"><%= event.name %></h4>
+											  	<h5><%= event.place %></h5>
+											  	<h5><%= event.date.toDateString() %></h5>
+												<p>
+													Posted on: <%= event.created.toDateString() %>
+													<br>
+													Posted by: <%= event.author.username %>
+												</p>
+											    <p class="card-text"><%- event.desc.substring(0, 100) %>...</p>
+											    <a href="/events/<%= event._id %>" class="btn main_btn" style="border-left: none">Show more <i class="fas fa-chevron-circle-down"></i></a>
+											  </div>
+											</div>	
+										</div>
+								<% }); %>
+							</div>
+								
+							
+						</div>
+						
+						
+					</div>
+        		</div>
+        	</div>
+        </section>
+        <!--================End Event Schedule Area =================-->
+        
+        <!--================Team Area =================-->
+        <section class="team_area p_120">
+        	<div class="container">
+        		<div class="main_title">
+        			<h2>Meet The Heads</h2>
+        			<p>A small tagline to describe some for the people who started this initiative and a line description and a line description and a line description</p>
+        		</div>
+        		<div class="row team_inner">
+        			<div class="col-lg-3 col-sm-6">
+        				<div class="team_item">
+        					<div class="team_img">
+        						<img class="img-fluid" src="img/team/team-1.jpg" alt="">
+        						<div class="hover">
+        							<a href="#"><i class="fab fa-facebook"></i></a>
+        							<a href="#"><i class="fab fa-twitter"></i></a>
+        							<a href="#"><i class="fab fa-linkedin"></i></a>
+        						</div>
+        					</div>
+        					<div class="team_name">
+        						<h4>Ethel Davis</h4>
+        						<p>Managing Director (Sales)</p>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="col-lg-3 col-sm-6">
+        				<div class="team_item">
+        					<div class="team_img">
+        						<img class="img-fluid" src="img/team/team-2.jpg" alt="">
+        						<div class="hover">
+        							<a href="#"><i class="fab fa-facebook"></i></a>
+        							<a href="#"><i class="fab fa-twitter"></i></a>
+        							<a href="#"><i class="fab fa-linkedin"></i></a>
+        						</div>
+        					</div>
+        					<div class="team_name">
+        						<h4>Ethel Davis</h4>
+        						<p>Managing Director (Sales)</p>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="col-lg-3 col-sm-6">
+        				<div class="team_item">
+        					<div class="team_img">
+        						<img class="img-fluid" src="img/team/team-3.jpg" alt="">
+        						<div class="hover">
+        							<a href="#"><i class="fab fa-facebook"></i></a>
+        							<a href="#"><i class="fab fa-twitter"></i></a>
+        							<a href="#"><i class="fab fa-linkedin"></i></a>
+        						</div>
+        					</div>
+        					<div class="team_name">
+        						<h4>Ethel Davis</h4>
+        						<p>Managing Director (Sales)</p>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="col-lg-3 col-sm-6">
+        				<div class="team_item">
+        					<div class="team_img">
+        						<img class="img-fluid" src="img/team/team-4.jpg" alt="">
+        						<div class="hover">
+        							<a href="#"><i class="fab fa-facebook"></i></a>
+        							<a href="#"><i class="fab fa-twitter"></i></a>
+        							<a href="#"><i class="fab fa-linkedin"></i></a>
+        						</div>
+        					</div>
+        					<div class="team_name">
+        						<h4>Ethel Davis</h4>
+        						<p>Managing Director (Sales)</p>
+        					</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </section>
+        <!--================End Team Area =================-->
+        
+        <!-- Section: Testimonials v.2 -->
+		<section class="text-center my-5">
+		
+		<!-- Section heading -->
+		<h2 class="h1-responsive font-weight-bold my-5">Testimonials</h2>
+		
+		<!-- Carousel Wrapper -->
+		<div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel"
+		data-interval="false">
+		<!--Slides-->
+		<div class="carousel-inner container p-5 p-m-0" role="listbox">
+		  <!--First slide-->
+		  <div class="carousel-item active">
+		    <div class="testimonial">
+		      <!--Avatar-->
+		      <div class="avatar mx-auto mb-4">
+		        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="rounded-circle img-fluid"
+		          alt="First sample avatar image">
+		      </div>
+		      <!--Content-->
+		      <p>
+		        <i class="fas fa-quote-left"></i> Through encouragement and support from their team members, those that were reluctant
+	              slowly allowed themselves to try. You could see a smile on their faces after they 
+	              participated. The importance of team support, working with others to develop a strategy, 
+	              and being needed by others seemed to be a new concept. Once the students saw that that idea
+	              worked, the idea was quickly accepted. It appeared to me that the students would need
+	              constant reminders to help them keep the life changes that we were trying to teach.
+		      </p>
+		      <h4 class="font-weight-bold">Dr. Keith Sehon</h4>
+		      <h6 class="font-weight-bold my-3">Mentor</h6>
+		      <!--Review-->
+		      <i class="fas fa-star blue-text"> </i>
+		      <i class="fas fa-star blue-text"> </i>
+		      <i class="fas fa-star blue-text"> </i>
+		      <i class="fas fa-star blue-text"> </i>
+		      <i class="fas fa-star-half-alt blue-text"> </i>
+		    </div>
+		  </div>
+		  <!--First slide-->
+		  <!--Second slide-->
+		  <div class="carousel-item">
+		    <div class="testimonial">
+		      <!--Avatar-->
+		      <div class="avatar mx-auto mb-4">
+		        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg" class="rounded-circle img-fluid"
+		          alt="Second sample avatar image">
+		      </div>
+		      <!--Content-->
+		      <p>
+		        <i class="fas fa-quote-left"></i> The program has had an impact on student’s self-esteem and confidence. Many of the 
+                                  students are more confident in their approach toward their peers. Several of them have 
+                                  become more social and caring in their mannerisms. Even the most shy students come out of
+                                  their shells when they are around others.<br>
+                                  When I see any of them doing something that he/she should not be doing, I just have to 
+                                  say “Is this an action of a DREAMS participant.” The student will readily answer in the 
+                                  negative and will change in his/her behavior. I can only answer for their change at school,
+                                  not any of the other. 
+              </p>
+		      <h4 class="font-weight-bold">Janet Breard</h4>
+		      <h6 class="font-weight-bold my-3">Assistant Principal at Ouachita Junior High School, Monroe, LA</h6>
+		      <!--Review-->
+		      <i class="fas fa-star blue-text"> </i>
+		      <i class="fas fa-star blue-text"> </i>
+		      <i class="fas fa-star blue-text"> </i>
+		      <i class="fas fa-star blue-text"> </i>
+		      <i class="fas fa-star blue-text"> </i>
+		    </div>
+		  </div>
+		  <!--Second slide-->
+		  <!--Third slide-->
+		  <div class="carousel-item">
+		    <div class="testimonial">
+		      <!--Avatar-->
+		      <div class="avatar mx-auto mb-4">
+		        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg" class="rounded-circle img-fluid"
+		          alt="Third sample avatar image">
+		      </div>
+		      <!--Content-->
+		      <p>
+		        <i class="fas fa-quote-left"></i> Being that my children are home schooled, I feel that the program has provided them 
+                                  an opportunity to be exposed to situations they may not otherwise have been exposed to. 
+                                  For example, group discussions on suicide, bullying, peer pressure etc. Things my children
+                                  do not face on a day to day basis. Also, I like the leadership aspect that is encouraged 
+                                  throughout the program. I think the program has also helped them see the importance of 
+                                  setting goals and having purpose. We discuss these as a family, but the program helped to 
+                                  make it real to them.
+               </p>
+		      <h4 class="font-weight-bold">Pam Charrior</h4>
+		      <h6 class="font-weight-bold my-3">Parent</h6>
+		      <!--Review-->
+		      <i class="fas fa-star blue-text"> </i>
+		      <i class="fas fa-star blue-text"> </i>
+		      <i class="fas fa-star blue-text"> </i>
+		      <i class="fas fa-star blue-text"> </i>
+		      <i class="far fa-star blue-text"> </i>
+		    </div>
+		  </div>
+		  <!--Third slide-->
+		</div>
+		<!--Slides-->
+		<!--Controls-->
+		<a class="carousel-control-prev left carousel-control" href="#carousel-example-1" role="button" data-slide="prev">
+		  <i class="fas fa-chevron-left" aria-hidden="true"></i>
+		  <span class="sr-only text-black">Previous</span>
+		</a>
+		<a class="carousel-control-next right carousel-control" href="#carousel-example-1" role="button" data-slide="next">
+		  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+		  <span class="sr-only text-black">Next</span>
+		</a>
+		<!--Controls-->
+		</div>
+		<!-- Carousel Wrapper -->
+		
+		</section>
+		<!-- Section: Testimonials v.2 -->
+        
+        
+<% include ./partials/footer %>

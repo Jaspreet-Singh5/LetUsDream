@@ -1,0 +1,39 @@
+<% include ./partials/header %>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/index">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Events Schedule</li>
+  </ol>
+</nav>
+
+
+<div class= "container-fluid" style="margin-top: -70px; margin-bottom: 100px; padding-right: 0px; padding-left: 0px">
+    <div class= "row">
+        <div class= "col-md-12" style="margin-top: 50px">
+            <div class="card bg-light text-justify" style="width: 100%;">
+              <div class="card-header">
+                  <h3 class="display-4"><%= event.name %></h3>
+              </div>
+              <img class="card-img-top img-fluid img-thumbnail" src="<%= event.logo %>" style="height:auto">
+              <div class="card-body">
+                <h5><%= event.place %></h5>
+                <h5><%= event.date.toDateString() %></h5>
+				<p>
+					Posted on: <%= event.created.toDateString() %>
+					<br>
+					Posted by: <%= event.author.username %>
+				</p>
+			    <p class="card-text"><%- event.desc %></p>
+			    
+			   </div>
+			   <div class="coordinators">
+    			   <h5 class="coordinators-list-header">Project Coordinators</h5>
+    			   <%- event.coordinators %>
+    		    </div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+<% include ./partials/footer %>

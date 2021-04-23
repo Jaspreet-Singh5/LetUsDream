@@ -1,0 +1,33 @@
+i.icon{
+    font-size: 2em;
+}
+
+.container.main{
+    margin-top: 7.0em;
+}
+
+#delete{
+    display: inline;
+}
+
+.delete-form{
+    display: inline;
+}
+
+.ui.menu:not(.vertical) a#signedAs.ui.item  {
+    display: none;
+}
+
+div.ui.fixed.inverted.menu {
+  font-size: 0.7rem;
+}
+
+@media (min-width: 992px) { 
+  .ui.menu:not(.vertical) a#signedAs.ui.item {
+      display: flex;
+  }
+  
+  div.ui.fixed.inverted.menu {
+      font-size: 1rem;
+  }
+}

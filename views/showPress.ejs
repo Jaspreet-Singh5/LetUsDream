@@ -1,0 +1,32 @@
+<% include ./partials/header %>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/index">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Videos</li>
+  </ol>
+</nav>
+
+<div class= "container-fluid" style="margin-top: -70px; margin-bottom: 100px; padding-right: 0px; padding-left: 0px">
+    <div class= "row">
+        <div class= "col-md-12" style="margin-top: 50px">
+            <div class="card bg-light text-justify" style="width: 100%;">
+              <div class="card-header">
+                  <h3 class="display-4"><%= press.title %></h3>
+              </div>
+              <img class="card-img-top img-fluid img-thumbnail" src="<%= press.image %>" style="height:auto">
+              <div class="card-body">
+                <p>
+					Posted on: <%= press.created.toDateString() %>
+					<br>
+					Posted by: <%= press.author.username %>
+				</p>
+			    <p class="card-text"><%- press.desc %></p>
+			    
+			   </div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+<% include ./partials/footer %>

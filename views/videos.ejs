@@ -1,0 +1,43 @@
+<% include ./partials/header %>       
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/index">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Videos</li>
+          </ol>
+        </nav>
+        
+        
+        <!--================Welcome Area =================-->
+        <section class="">
+        	<div class="container-fluid">
+        	    
+                <div class="row mt-3">
+                    
+                    <% video.forEach(function(video){ %>
+            			<div class="col-md-6 pb-2">
+            			    <div class="card">
+                        		<!-- 16:9 aspect ratio -->
+                                <div class="card-img-top embed-responsive embed-responsive-16by9">
+                                  <iframe class="embed-responsive-item media_videos" src="<%= video.video %>" allowfullscreen></iframe>
+                                </div>
+                            
+                                <div class="card-body">
+                                    <h5 class="card-title"><%= video.title %></h5>
+                                    <p class="card-text"><%- video.desc %></p>
+                                    <p class="card-text">
+                                      <small>Posted by: <%= video.author.username %></small>
+                                      <br>
+                                      <small><%= video.created.toDateString() %></small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>  
+                
+        	</div>
+        </section>
+        <!--================End Welcome Area =================-->
+    
+<% include ./partials/footer %>

@@ -1,0 +1,192 @@
+<% include ./partials/header %>
+
+    <div class="container-fluid" style = "margin: 300px auto; width: 30%; margin-bottom: 100px">
+        <div class="row">
+            <div>
+                <h1 style = "text-align: center">Register</h1>
+                <p class="text-justify"><span class="font-weight-bold">Note:</span> The participant’s custodial parent/guardian 
+                      must complete the following information. 
+                      Any changes to this form should be provided to the D.R.E.A.M.S. team upon participant’s arrival to the program.
+                </p>  
+                <form action="/register" method="post">
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <label for="inputEmail4">Email</label>
+                      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="participant[email]">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputFName4">First name</label>
+                      <input type="text" class="form-control" id="inputFName4" placeholder="Steven" name="participant[fName]">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputLName4">Last name</label>
+                      <input type="text" class="form-control" id="inputLName4" placeholder="Smith" name="participant[lName]">
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <label for="inputDOB">D.O.B.</label>
+                      <input type="date" class="form-control" id="inputDOB" placeholder="dd/mm/yy" name="participant[dob]">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <label for="inputGrade">Grade Entering</label>
+                      <select id="inputGrade" class="form-control" name="participant[grade]">
+                        <option selected>Choose...</option>
+                        <option value="I">I</option>
+                        <option value="II">II</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="participant[gender]" id="inlineRadio1" value="Male">
+                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="participant[gender]" id="inlineRadio2" value="Female">
+                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="participant[gender]" id="inlineRadio3" value="Other">
+                    <label class="form-check-label" for="inlineRadio3">Prefer not to say</label>
+                  </div>
+                  <div class="form-group pt-2">
+                    <label for="inputAddress">Address</label>
+                    <input type="text" class="form-control" id="inputAddress" name="participant[address]" placeholder="1234 Main St">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <label for="inputCountry">Country</label>
+                      <select id="inputCountry" class="form-control" name="participant[country]">
+                        <option selected>Choose...</option>
+                        <option value="India">India</option>
+                        <option value="China">China</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCity">City</label>
+                      <input type="text" class="form-control" name="participant[city]" placeholder="Bengaluru" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputState">State</label>
+                      <select id="inputState" name="participant[state]">
+                        <option selected>Choose...</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Punjab">Punjab</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="inputZip">Zip</label>
+                      <input type="text" name="participant[zip]" class="form-control" placeholder="560029" id="inputZip">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <label for="inputLocation">Location</label>
+                      <select id="inputLocation" class="form-control" name="participant[locat]">
+                        <option selected>Choose...</option>
+                        <option value="Banglore Dreams">Banglore Dreams</option>
+                        <option value="Dallas Dreams">Dallas Dreams</option>
+                        <option value="Houston Dreams">Houston Dreams</option>
+                        <option value="McAllen Dreams">McAllen Dreams</option>
+                        <option value="Ouachita Dreams">Ouachita Dreams</option>
+                        <option value="Dallas Dreams">Monroe Dreams</option>
+                        <option value="Bastrop Dreams">Bastrop Dreams</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <label for="inputPName4">Parent/Guardian name</label>
+                      <input type="text" class="form-control" id="inputPName4" placeholder="Martin Williamson" name="participant[pName]">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputmNum">Moblie number</label>
+                      <input type="text" class="form-control" id="inputmNum" placeholder="+91 1234567890" name="participant[mNum]">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputLName4">Telphone number</label>
+                      <input type="text" class="form-control" id="inputphNum" placeholder="020-30303030" name="participant[tphNum]">
+                    </div>
+                  </div>
+                  <p class="text-justify">
+                    <span class="font-weight-bold">Note: </span>
+                    Emergency contact details if parent/guardian cannot be reached (authorized to release child to):
+                  </p>
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <label for="inputEName">Name</label>
+                      <input type="text" class="form-control" id="inputEName" placeholder="David" name="participant[eName]">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputeMNum">Moblie number</label>
+                      <input type="text" class="form-control" id="inputeMNum" placeholder="+91 1234567890" name="participant[eMNum]">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputeTphNum">Telphone number</label>
+                      <input type="text" class="form-control" id="inputeTphNum" placeholder="020-30303030" name="participant[eTphNum]">
+                    </div>
+                  </div>
+                <a href= "/index">Go back</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="h4">D.R.E.A.M.S. Release Agreement 2015</p>
+          <p class="text-justify">
+              Dear Parents and Guardians,<br>
+              Please read through the document carefully and sign the release agreement at the bottom of the page. 
+              All rules and guidelines are put in place to ensure that all participants have a safe and fun experience. 
+              We want this to be an exciting experience that your teen will benefit from.<br>
+          </p>
+          
+          <p class="text-justify">The following Code of Ethics will be expected of all participants:</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Be polite, friendly, and courteous.</li>
+            <li class="list-group-item">No disrespect to the D.R.E.A.M.S. team or any participant of the program.</li>
+            <li class="list-group-item">No damage or vandalism to any property.</li>
+            <li class="list-group-item">No bullying, fighting, or threatening of any nature.</li>
+            <li class="list-group-item">No possession of drugs, alcohol, tobacco, or weapons of any kind.</li>
+            <li class="list-group-item">No “rough play” behavior that may be unsafe to others or self.</li>
+            <li class="list-group-item">Help others identify their talents to the fullest.</li>
+            <li class="list-group-item">Take responsibility for your own actions.</li>
+          </ul>  
+              
+          <p class="text-justify"></p>
+              I have read and understand the above-mentioned Code of Ethics. 
+              I agree that not adhering to the Code of Ethics may result in suspension from the program.<br>
+              I understand that pictures will be taken throughout the week. 
+              I hereby give permission for the pictures to be used to promote future D.R.E.A.M.S. projects. 
+              I give permission for my child’s belongings to be searched, with my child present, when the D.R.E.A.M.S. 
+              team finds it necessary to protect the well-being of my child or any other participant.<br>
+              I understand that my child will participate in various activities throughout the week, some which may be strenuous. 
+              I would like for my child to participate in all activities (please see enclosed schedule) AND 
+              I release the D.R.E.A.M.S. team or any volunteer from all liability that may result from personal injury or 
+              injuries to property, resulting from any physical activity.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+<% include ./partials/footer %>

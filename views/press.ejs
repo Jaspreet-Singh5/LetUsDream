@@ -1,0 +1,40 @@
+<% include ./partials/header %>       
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/index">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Press</li>
+          </ol>
+        </nav>
+        
+        <!--================Welcome Area =================-->
+        <section class="">
+        	<div class="container-fluid">
+        	    
+        		<div class="row">
+        		  
+        		  <% press.forEach(function(press){ %>
+          			<div class="col-md-6 pb-2">
+          			    <div class="card mt-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= press.title %></h5>
+                                <p class="card-text"><%- press.desc.substring(0,100) %>....</p>
+                                <p class="card-text">
+                                  <small>Posted by: <%= press.author.username %></small>
+                                  <br>
+                                  <small><%= press.created.toDateString() %></small>
+                                </p>
+                                <a href="/press/<%= press._id %>" class="btn main_btn" style="border-left: none">Show more <i class="fas fa-chevron-circle-down"></i></a>
+                            </div>
+                            <div class="card-img-bottom img-fluid" style="background-image: url('<%= press.image %>')">
+											      </div>
+                    </div>
+          			</div>
+          		<% }); %>
+        		</div>	
+        			
+        	</div>
+        </section>
+        <!--================End Welcome Area =================-->
+    
+<% include ./partials/footer %>

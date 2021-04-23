@@ -1,0 +1,51 @@
+<% include ./partials/header %>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div style = "margin: 300px auto; width: 30%">
+                <h1 style = "text-align: center">Add a new event</h1>
+            
+                <form action = "/index" method = "post">
+                    <div class= "form-group">
+                        <input class = "form-control" type = "text" placeholder = "Name" name = "event[name]">
+                    </div>
+                    <div class= "form-group">
+                        <input class= "form-control" type = "text" placeholder="location" name = "event[location]">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea class="form-control" id="address" name="event[address]" rows="3"></textarea>
+                    </div>
+                    <div class= "form-group">
+                        <input class= "form-control" type = "text" placeholder="image link" name = "event[logo]">
+                    </div>
+                    <div class= "form-group">
+                        <input class= "form-control" type = "date" placeholder="Date" name = "event[date]">
+                    </div>
+                    <div class= "form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" class="form-control" name= "event[desc]"  row="3" required></textarea>
+                    </div>
+                    <div class= "form-group">
+                        <label for="Project Coordinators">Project Coordinators</label>
+                        <textarea id="Project Coordinators" class="form-control" name= "event[coordinators]"  row="3" required>
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">Name1: Email id1</li>
+    <li class="list-group-item">Name2: Email id2</li>
+    <li class="list-group-item">Name3: Email id3</li>
+</ul>
+                        </textarea>
+                    </div>
+                    <div class= "form-group">
+                        <input class = "btn btn-primary btn-large btn-block" type = "submit" value = "Submit"> 
+                    </div>
+                    
+                </form>
+            
+                <a href= "/cmsIndex">Go back</a>
+            </div>
+        </div>
+    </div>
+
+<% include ./partials/footer %>

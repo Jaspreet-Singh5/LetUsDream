@@ -1,0 +1,70 @@
+<% include ./partials/header %>
+
+    <div class="container-fluid" style = "margin: 200px auto;">
+        <h1 style = "text-align: center">List of registered participants</h1>
+        
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered table-info">
+              <thead class="bg-primary text-white">
+                <tr>
+                  <th scope="col" rowspan=2>#</th>
+                  <th scope="col" rowspan=2>Email</th>
+                  <th scope="col" rowspan=2>First Name</th>
+                  <th scope="col" rowspan=2>Last Name</th>
+                  <th scope="col" rowspan=2>Registration Date</th>
+                  <th scope="col" rowspan=2>D.O.B.</th>
+                  <th scope="col" rowspan=2>Grade Entering</th>
+                  <th scope="col" rowspan=2>Gender</th>
+                  <th scope="col" rowspan=2>Address</th>
+                  <th scope="col" rowspan=2>Country</th>
+                  <th scope="col" rowspan=2>City</th>
+                  <th scope="col" rowspan=2>State</th>
+                  <th scope="col" rowspan=2>Zip</th>
+                  <th scope="col" rowspan=2>Location</th>
+                  <th scope="col" rowspan=2>Parent/Guardian name</th>
+                  <th scope="col" rowspan=2>Mobile number</th>
+                  <th scope="col" rowspan=2>Telephone number</th>
+                  <th scope="col" colspan="3">Emergency</th>
+                </tr>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Mobile number</th>
+                  <th scope="col">Telephone number</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% var i=1; %>
+                <%   participants.forEach(function(participant) { %>
+                    <tr class="align-middle text-center">
+                      <th scope="row"><%= i %></th>
+                      <% i++; %>
+                      <td><%= participant.email %></td>
+                      <td><%= participant.fName %></td>
+                      <td><%= participant.lName %></td>
+                      <td><%= participant.created.toDateString() %></td>
+                      <td><%= participant.dob.toDateString() %></td>
+                      <td><%= participant.grade %></td>
+                      <td><%= participant.gender %></td>
+                      <td><%= participant.address %></td>
+                      <td><%= participant.country %></td>
+                      <td><%= participant.city %></td>
+                      <td><%= participant.state %></td>
+                      <td><%= participant.zip %></td>
+                      <td><%= participant.locat %></td>
+                      <td><%= participant.pName %></td>
+                      <td><%= participant.mNum %></td>
+                      <td><%= participant.tphNum %></td>
+                      <td><%= participant.eName %></td>
+                      <td><%= participant.eMNum %></td>
+                      <td><%= participant.eTphNum %></td>
+                    </tr>
+                <% }); %>
+              </tbody>
+            </table>    
+        </div>
+            <a href= "/cmsIndex">Go back</a>
+            </div>
+        </div>
+    </div>
+
+<% include ./partials/footer %>
